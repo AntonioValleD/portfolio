@@ -200,8 +200,8 @@ i:hover{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 15px;
+    justify-content: center;
+    gap: 40px;
     margin: 15px 0;
 }
 @media(max-width: 768px){
