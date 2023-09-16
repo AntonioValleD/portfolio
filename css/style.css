@@ -305,9 +305,8 @@ i:hover{
 }
 .gexperience{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 15px; 
     justify-content: space-between;
     margin: 15px 0;
 }
@@ -325,7 +324,7 @@ i:hover{
     border-radius: 15px;
     color: white;
     padding: 10px 15px;
-    flex: 29%;
+    flex: 45%;
 }
 .job-experience h2{
     margin-bottom: 5px;
@@ -371,6 +370,8 @@ i:hover{
     padding-top: 50px;
     border-top: 1px solid #191919;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 #contact h2, #contact h3{
     color: white;
