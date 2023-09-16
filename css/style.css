@@ -356,6 +356,11 @@ i:hover{
 .job-experience li img{
     height: 30px;
 }
+.experienceTime{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
 
 /* Contact */
 #contact{
@@ -365,10 +370,19 @@ i:hover{
     background-size: cover;
     padding-top: 50px;
     border-top: 1px solid #191919;
+    display: flex;
 }
 #contact h2, #contact h3{
     color: white;
     font-family: 'Poppins', sans-serif;
+}
+.infoItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.infoItem h3{
+    font-size: 16px;
 }
 .item-form{
     display: grid;
@@ -433,6 +447,19 @@ input[type="button"]:hover{
 }
 .hiden{
     display: none;
+}
+
+.questionsForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactInfo{
+    margin-right: 40px;
+}
+.contactInfo h2{
+    margin-bottom: 15px;
 }
 
 /* Footer */
