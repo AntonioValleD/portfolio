@@ -149,7 +149,7 @@ i:hover{
 /* About */
 #about{
     padding-top: 70px;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
     display: grid;
     grid-template-columns: 250px 1fr;
 }
@@ -190,6 +190,43 @@ i:hover{
     border: 4px solid aqua;
     border-radius: 5px;
 }
+
+
+/* Skills */
+#skills{
+    border-top: 4px solid aqua;
+    border-bottom: 3px solid aqua;
+    background-color: white;
+    color: black;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#skills h2{
+    color: black;
+}
+
+.skillsTitle{
+    margin-top: 20px;
+    color: black;
+}
+
+.skillsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.skillCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skillImg img{
+    height: 100px;
+}
+
 
 /* Portfolio */
 #portfolio{
@@ -250,7 +287,6 @@ i:hover{
 }
 .card .sep{
     margin: 0 5px 5px 0;
-    border: 1px solid aqua;
 }
 
 /* Experience */
@@ -262,6 +298,8 @@ i:hover{
     align-content: space-around;
 }*/
 #experience{
+    border-top: 4px solid aqua;
+    border-bottom: 4px solid aqua;
     padding-top: 70px;
     padding-bottom: 50px;
 }
