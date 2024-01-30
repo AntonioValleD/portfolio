@@ -41,20 +41,26 @@ submitBtn.addEventListener('click', async (event) => {
     }
 
     // Send email
-    await fetch('https://email-sender-api.fly.dev/email/send', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: userName.value, 
-            company: company.value, 
-            email: email.value, 
-            message: message.value
+    try {
+        await fetch('https://email-sender-api.fly.dev/email/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: userName.value, 
+                company: company.value, 
+                email: email.value, 
+                message: message.value
+            })
         })
-    })
-    
-    alert("Message sent successfully!")
+
+        alert("Your message has been sent successfully")
+    } catch (error) {
+        alert("An error occurred while sending your message")
+    }
+
+
 
     // Clean form fields
     userName.value = ""
