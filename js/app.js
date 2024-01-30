@@ -1,11 +1,14 @@
-const form = document.querySelector('.contact-form')
 const submitBtn = document.getElementById('submit-btn')
 const currentJobTimmer = document.getElementById('current-job-timmer')
 
-var name2 = document.getElementById('name2')
-var company2 = document.getElementById('company2')
-var email2 = document.getElementById('email2')
-var message2 = document.getElementById('message2')
+// Get form data
+const userName = document.getElementById('name')
+const company = document.getElementById('company')
+const email = document.getElementById('email')
+const message = document.getElementById('message')
+
+// Regular expression for email validation
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
 
 window.addEventListener('load', () => {
@@ -14,23 +17,50 @@ window.addEventListener('load', () => {
 })
 
 
-submitBtn.addEventListener('click', (event) => {
-    name2.value = '';
-    company2.value = '';
-    email2.value = '';
-    message2.value = '';
 
-    let name = document.getElementById('name').value;
-    let company = document.getElementById('company').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
+submitBtn.addEventListener('click', async (event) => {
+    event.preventDefault()
 
-    name2.value = name;
-    company2.value = company;
-    email2.value = email;
-    message2.value = message;
+    // Validate form fields
+    if (userName.value == ""){
+        alert("Please enter your name")
+        userName.focus()
+        return
+    } else if (email.value == ""){
+        alert("Please enter your email")
+        email.focus()
+        return
+    } else if (!emailRegex.test(email.value)){
+        alert("Please enter a valid email")
+        email.focus()
+        return
+    } else if (message.value == ""){
+        alert("Please enter your message")
+        message.focus()
+        return
+    }
 
-    form.submit();
+    // Send email
+    await fetch('https://email-sender-api.fly.dev/email/send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: userName.value, 
+            company: company.value, 
+            email: email.value, 
+            message: message.value
+        })
+    })
+    
+    alert("Message sent successfully!")
+
+    // Clean form fields
+    userName.value = ""
+    company.value = ""
+    email.value = ""
+    message.value = ""
 })
 
 
