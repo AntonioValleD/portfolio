@@ -1,5 +1,6 @@
 const submitBtn = document.getElementById('submit-btn')
 const currentJobTimmer = document.getElementById('current-job-timmer')
+const aboutContentAge = document.getElementById('about-content-age')
 
 // Get form data
 const userName = document.getElementById('name')
@@ -14,6 +15,7 @@ const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 window.addEventListener('load', () => {
     // Set current job elapsed time
     currentJobTimmer.innerText = getElapsedTime()
+    aboutContentAge.innerText = getMyAge()
 })
 
 
@@ -102,4 +104,13 @@ const getElapsedTime = () => {
     const elapsedTime = `${elapsedYears} ${elapsedMonths}`
 
     return elapsedTime
+}
+
+
+// Get my age
+function getMyAge(){
+    const bornDate = new Date("2000-02-16")
+    const currentAge = parseInt((new Date - bornDate) / (1000 * 60 * 60 * 24 * 365))
+
+    return currentAge
 }
